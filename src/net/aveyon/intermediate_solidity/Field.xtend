@@ -1,6 +1,10 @@
 package net.aveyon.intermediate_solidity
 
-@org.eclipse.xtend.lib.annotations.Data
+import lombok.Setter
+import lombok.Getter
+
+@Setter
+@Getter
 abstract class Field {
 	String name
 	Visibility visibility
