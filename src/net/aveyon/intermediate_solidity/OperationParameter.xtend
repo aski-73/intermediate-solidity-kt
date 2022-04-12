@@ -5,8 +5,15 @@ import lombok.Getter
 
 @Setter
 @Getter
-abstract class OperationParameter {
+abstract class OperationParameter extends Node {
 	String name
 	String type
-	MemoryType memoryType = MemoryType.MEMORY
+	DataLocation dataLocation = DataLocation.MEMORY
+
+	// Copy ctor
+	public new(OperationParameter copySource) {
+		name = copySource.name
+		type = copySource.type
+		dataLocation = copySource.dataLocation
+	}
 }

@@ -8,7 +8,7 @@ import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 @Getter
 @Setter
 @SuppressWarnings("all")
-public abstract class Enumeration {
+public abstract class Enumeration extends Node {
   private String name;
   
   private List<String> values = CollectionLiterals.<String>newLinkedList();

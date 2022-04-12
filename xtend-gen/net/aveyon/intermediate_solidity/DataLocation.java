@@ -1,7 +1,7 @@
 package net.aveyon.intermediate_solidity;
 
 @SuppressWarnings("all")
-public enum MemoryType {
+public enum DataLocation {
   MEMORY,
   
   CALLDATA;

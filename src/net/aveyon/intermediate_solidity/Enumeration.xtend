@@ -6,7 +6,7 @@ import lombok.Setter
 
 @Getter
 @Setter
-abstract class Enumeration {
+abstract class Enumeration extends Node {
 	String name
 	List<String> values = newLinkedList
 }

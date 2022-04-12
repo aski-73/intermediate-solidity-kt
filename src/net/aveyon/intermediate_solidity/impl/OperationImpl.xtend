@@ -4,4 +4,8 @@ import net.aveyon.intermediate_solidity.Operation
 
 class OperationImpl extends Operation {
 	
+	new(Operation copySource) {
+		super(copySource)
+	}
+	
 }

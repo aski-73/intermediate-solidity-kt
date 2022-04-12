@@ -1,9 +1,10 @@
 package net.aveyon.intermediate_solidity.impl
 
 import net.aveyon.intermediate_solidity.SmartContract
-import lombok.Builder
+import lombok.experimental.SuperBuilder
 
-@Builder
 class SmartContractImpl extends SmartContract {
-	
+	new(SmartContract copySource) {
+		super(copySource)
+	}
 }

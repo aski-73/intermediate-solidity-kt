@@ -6,14 +6,14 @@ import lombok.Setter;
 @Setter
 @Getter
 @SuppressWarnings("all")
-public abstract class Field {
-  private String name;
-  
+public abstract class Field extends StructureField {
   private Visibility visibility;
   
-  private String type;
-  
-  private boolean payable;
-  
   private String value;
+  
+  public Field(final Field copySource) {
+    super(copySource);
+    this.visibility = copySource.visibility;
+    this.value = copySource.value;
+  }
 }
