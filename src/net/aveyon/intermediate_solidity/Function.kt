@@ -8,4 +8,6 @@ abstract class Function(name: String) : Node(name) {
     val expressions: MutableList<String> = LinkedList()
     val returns: MutableList<String> = LinkedList()
     val parameters: MutableList<FunctionParameter> = LinkedList()
+    val isVirtual = false
+    val doesOverride = false
 }

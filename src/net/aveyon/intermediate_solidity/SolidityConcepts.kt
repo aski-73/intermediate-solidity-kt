@@ -3,5 +3,6 @@ package net.aveyon.intermediate_solidity
 import java.util.*
 
 abstract class SolidityConcepts : GeneralSolidityConcepts() {
-    val smartContracts: MutableList<SmartContract> = LinkedList()
+    val contracts: MutableList<SmartContract> = LinkedList()
+    val interfaces: MutableList<Interface> = LinkedList()
 }

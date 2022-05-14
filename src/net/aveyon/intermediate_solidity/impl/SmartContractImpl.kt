@@ -8,7 +8,10 @@ import net.aveyon.intermediate_solidity.Structure
 class SmartContractImpl : SmartContract {
     // Copy ctor
     constructor(copySource: SmartContract) : this(copySource.name) {
-        isInterface = copySource.isInterface
+        copySource.implements.forEach {
+            val i = InterfaceImpl(it)
+            implements.add(i)
+        }
         copySource.extends.forEach { ext: SmartContract ->
             val smartContractImpl = SmartContractImpl(ext)
             extends.add(smartContractImpl)
