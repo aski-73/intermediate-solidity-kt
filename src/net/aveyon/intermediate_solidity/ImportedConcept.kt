@@ -1,6 +1,6 @@
 package net.aveyon.intermediate_solidity
 
-abstract class ImportedConcept {
-    val path: String? = null
-    val importedConcept: SmartContract? = null
-}
+/**
+ * A Solidity import can import multiple concepts. Therefore we provide [SolidityConcepts] in the ctor (plural)
+ */
+abstract class ImportedConcept(val path: String, val concepts: SolidityConcepts)

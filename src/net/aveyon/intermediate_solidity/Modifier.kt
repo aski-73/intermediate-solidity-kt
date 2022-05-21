@@ -1,6 +1,9 @@
 package net.aveyon.intermediate_solidity
 
+import java.util.LinkedList
+
 abstract class Modifier(name: String) : Node(name) {
-    val isVirtual = false
-    val doesOverride = false
+    var isVirtual = false
+    var doesOverride = false
+    val expressions: MutableList<String> = LinkedList()
 }

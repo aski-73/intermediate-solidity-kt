@@ -32,5 +32,5 @@ class SmartContractImpl : SmartContract {
             definitions.structures.add(structureImpl)
         }
     }
-    constructor(name: String) : super(name, GeneralSolidityConceptsImpl()) {}
+    constructor(name: String) : super(name, ContractConceptsImpl()) {}
 }

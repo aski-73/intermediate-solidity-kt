@@ -10,4 +10,5 @@ abstract class Function(name: String) : Node(name) {
     val parameters: MutableList<FunctionParameter> = LinkedList()
     val isVirtual = false
     val doesOverride = false
+    val payable = false
 }
