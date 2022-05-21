@@ -1,13 +1,14 @@
 package net.aveyon.intermediate_solidity.impl
 
 import net.aveyon.intermediate_solidity.Field
-import net.aveyon.intermediate_solidity.Function
 import net.aveyon.intermediate_solidity.SmartContract
-import net.aveyon.intermediate_solidity.Structure
+import net.aveyon.intermediate_solidity.impl.GeneralSolidityConceptsImpl.Companion.initConceptObject
 
 class SmartContractImpl : SmartContract {
     // Copy ctor
     constructor(copySource: SmartContract) : this(copySource.name) {
+        definitions = ContractConceptsImpl(copySource.definitions)
+
         copySource.implements.forEach {
             val i = InterfaceImpl(it)
             implements.add(i)
@@ -22,15 +23,6 @@ class SmartContractImpl : SmartContract {
             fields.add(fieldImpl)
         }
 
-        copySource.definitions.functions.forEach{ op: Function ->
-            val operationImpl = FunctionImpl(op)
-            definitions.functions.add(operationImpl)
-        }
-
-        copySource.definitions.structures.forEach { struct: Structure ->
-            val structureImpl = StructureImpl(struct)
-            definitions.structures.add(structureImpl)
-        }
     }
     constructor(name: String) : super(name, ContractConceptsImpl()) {}
 }

@@ -6,6 +6,10 @@ class FieldImpl : Field {
     constructor(copySource: Field) : super(copySource.name) {
         visibility = copySource.visibility
         value = copySource.value
+        type = copySource.type
+        payable = copySource.payable
+        array = copySource.array
+
     }
 
     constructor(name: String) : super(name) {}

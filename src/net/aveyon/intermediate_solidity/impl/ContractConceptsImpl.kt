@@ -7,7 +7,7 @@ class ContractConceptsImpl(): ContractConcepts() {
     /**
      * Copy ctor
      */
-    constructor(copySource: ContractConceptsImpl) : this() {
+    constructor(copySource: ContractConcepts) : this() {
         GeneralSolidityConceptsImpl.initConceptObject(this, copySource)
 
         copySource.modifiers.forEach {

@@ -4,7 +4,7 @@ import java.util.*
 
 abstract class SmartContract(
     name: String,
-    val definitions: ContractConcepts) : Node(name) {
+    var definitions: ContractConcepts) : Node(name) {
     var isAbstract = false
     val extends: MutableList<SmartContract> = LinkedList()
     val implements: MutableList<Interface> = LinkedList()
