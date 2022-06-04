@@ -13,5 +13,9 @@ class ContractConceptsImpl(): ContractConcepts() {
         copySource.modifiers.forEach {
             modifiers.add(ModifierImpl(it.name))
         }
+
+        if (copySource.constructor != null) {
+            constructor = ConstructorImpl(copySource.constructor!!)
+        }
     }
 }
