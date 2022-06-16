@@ -9,5 +9,14 @@ class ModifierImpl(name: String): Modifier(name) {
     constructor(copySource: Modifier): this(copySource.name) {
         isVirtual = copySource.isVirtual
         doesOverride = copySource.doesOverride
+
+        copySource.expressions.forEach {
+            // TODO replace with copy ctor
+            expressions.add(it)
+        }
+
+        copySource.parameters.forEach {
+            parameters.add(FunctionParameterImpl(it))
+        }
     }
 }

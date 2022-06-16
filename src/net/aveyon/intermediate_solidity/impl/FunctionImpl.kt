@@ -12,6 +12,8 @@ class FunctionImpl : Function {
     constructor(copySource: Function) : this(copySource.name) {
         isAbstract = copySource.isAbstract
         visibility = copySource.visibility
+        payable = copySource.payable
+        isPure = copySource.isPure
 
         copySource.expressions.forEach {
             // TODO replace with copy ctor

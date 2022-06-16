@@ -8,6 +8,7 @@ class SmartContractImpl : SmartContract {
     // Copy ctor
     constructor(copySource: SmartContract) : this(copySource.name) {
         definitions = ContractConceptsImpl(copySource.definitions)
+        isAbstract = copySource.isAbstract
 
         copySource.implements.forEach {
             val i = InterfaceImpl(it)
