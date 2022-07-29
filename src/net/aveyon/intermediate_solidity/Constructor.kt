@@ -3,7 +3,7 @@ package net.aveyon.intermediate_solidity
 import java.util.LinkedList
 
 abstract class Constructor: Node("ctor") {
-    val expressions: MutableList<Expression> = LinkedList()
+    val statements: MutableList<Statement> = LinkedList()
     val modifiers: MutableList<Modifier> = LinkedList()
     // Does not need payable since receive() and fallback() functions handle ether transfers.
     var payable: Boolean = false

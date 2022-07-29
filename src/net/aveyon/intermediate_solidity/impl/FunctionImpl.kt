@@ -1,11 +1,7 @@
 package net.aveyon.intermediate_solidity.impl
 
-import net.aveyon.intermediate_solidity.Expression
-import net.aveyon.intermediate_solidity.ExpressionIf
 import net.aveyon.intermediate_solidity.Function
 import net.aveyon.intermediate_solidity.FunctionParameter
-import java.util.function.Consumer
-import kotlin.reflect.full.createInstance
 
 class FunctionImpl : Function {
     // Copy ctor
@@ -15,12 +11,12 @@ class FunctionImpl : Function {
         payable = copySource.payable
         isPure = copySource.isPure
 
-        copySource.expressions.forEach {
+        copySource.statements.forEach {
             // TODO replace with copy ctor
-            expressions.add(it)
+            statements.add(it)
         }
 
-        copySource.returns.forEach { ret: String -> returns.add(ret) }
+        copySource.returns.forEach { ret -> returns.add(FunctionParameterImpl(ret)) }
         copySource.parameters.forEach { p: FunctionParameter ->
             parameters.add(FunctionParameterImpl(p))
         }

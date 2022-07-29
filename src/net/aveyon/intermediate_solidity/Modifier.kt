@@ -5,6 +5,6 @@ import java.util.LinkedList
 abstract class Modifier(name: String) : Node(name) {
     var isVirtual = false
     var doesOverride = false
-    val expressions: MutableList<Expression> = LinkedList()
+    val statements: MutableList<Statement> = LinkedList()
     val parameters: MutableList<FunctionParameter> = LinkedList()
 }

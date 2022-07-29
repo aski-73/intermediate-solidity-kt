@@ -5,8 +5,8 @@ import java.util.*
 abstract class Function(name: String) : Node(name) {
     var isAbstract = false
     var visibility: Visibility? = null
-    val expressions: MutableList<Expression> = LinkedList()
-    val returns: MutableList<String> = LinkedList()
+    val statements: MutableList<Statement> = LinkedList()
+    val returns: MutableList<FunctionParameter> = LinkedList()
     val parameters: MutableList<FunctionParameter> = LinkedList()
     var isVirtual = false
     var isPure = false

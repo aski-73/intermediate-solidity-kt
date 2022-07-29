@@ -10,9 +10,9 @@ class ModifierImpl(name: String): Modifier(name) {
         isVirtual = copySource.isVirtual
         doesOverride = copySource.doesOverride
 
-        copySource.expressions.forEach {
+        copySource.statements.forEach {
             // TODO replace with copy ctor
-            expressions.add(it)
+            statements.add(it)
         }
 
         copySource.parameters.forEach {

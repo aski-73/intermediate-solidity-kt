@@ -10,9 +10,9 @@ class ConstructorImpl(): Constructor() {
         payable = copySource.payable
         visibility = copySource.visibility
 
-        copySource.expressions.forEach {
+        copySource.statements.forEach {
             // TODO replace with copy ctor
-            expressions.add(it)
+            statements.add(it)
         }
 
         copySource.modifiers.forEach { modifier ->

@@ -1,7 +1,5 @@
 package net.aveyon.intermediate_solidity
 
-abstract class LocalField(name: String) : Node(name) {
-    lateinit var type: String
+abstract class LocalField(name: String, var type: Type) : Node(name) {
     var payable = false
-    var array = false
 }

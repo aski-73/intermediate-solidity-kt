@@ -1,15 +1,12 @@
 package net.aveyon.intermediate_solidity.impl
 
 import net.aveyon.intermediate_solidity.LocalField
+import net.aveyon.intermediate_solidity.Type
 
-class LocalFieldImpl : LocalField {
+class LocalFieldImpl(name: String, type: Type) : LocalField(name, type) {
 
     // Copy ctor
-    constructor(copySource: LocalField) : this(copySource.name) {
-        type = copySource.type
+    constructor(copySource: LocalField) : this(copySource.name, TypeImpl(copySource.type.name)) {
         payable = copySource.payable
-        array = copySource.array
     }
-
-    constructor(name: String) : super(name) {}
 }
